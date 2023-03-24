@@ -1,0 +1,15 @@
+<h2 id="css-title">Właściwości CSS</h2>
+<div id="input-color">Kolor: <input type="text" [(ngModel)]="css.color"></div>
+<div id="input-border">Obramowanie: <input type="text" [(ngModel)]="css.border"></div>
+<div id="input-background">Tło: <input type="text" [(ngModel)]="css['box-shadow']"></div>
+<div id="input-shadow">Cień: <input type="text" [(ngModel)]="css.background"></div>
+<div>
+    <button (click)="onGenerateCss()">Wygeneruj CSS</button>
+</div>
+<h2>Komponenty</h2>
+<div>
+    <button 
+    [style.color] = "css.color"
+    [style.background] = "background"
+    >Some button</button>
+</div>
