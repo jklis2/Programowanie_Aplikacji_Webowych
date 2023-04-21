@@ -1,0 +1,29 @@
+<div class="order-form-container">
+
+  <form [formGroup]="order" class="order-form">
+    <div><h1>Witamy</h1></div>
+    <div class="order-form-field">
+      <label
+        >Imie
+        <input formControlName="name" placeholder="Twoje imie" />
+      </label>
+    </div>
+
+    <div class="order-form-field">
+      <label
+        >Naziwsko
+        <input formControlName="surname" placeholder="Twoje nazwisko" />
+      </label>
+    </div>
+
+
+    <div class="order-form-field">
+        <label
+          >Adres
+          <input formControlName="address" placeholder="Twoj adres" />
+        </label>
+      </div>
+
+      <button (click)="onSubmit()" class="submit-order">Zamów</button>
+  </form>
+</div>
