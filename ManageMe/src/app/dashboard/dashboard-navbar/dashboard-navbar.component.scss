@@ -1,0 +1,19 @@
+.dashboard-navbar-wrapper {
+    min-height: 7vh;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.user-icon {
+    height: 40px;
+    margin: 0.5rem;
+    padding-right: 2rem;
+}
+
+.user-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+    padding-top: 0.5rem;
+}

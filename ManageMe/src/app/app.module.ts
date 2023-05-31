@@ -17,6 +17,8 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatTreeModule} from '@angular/material/tree';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // NgbModule,
     MatIconModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatTreeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
