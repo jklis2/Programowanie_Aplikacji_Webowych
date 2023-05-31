@@ -1,0 +1,31 @@
+.home-content {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+    p {
+        @media screen and (min-width: 1450px) {
+            font-size: 16px;
+        }
+    }
+
+    h2 {
+        @media screen and (min-width: 1450px) {
+            font-size: 30px;
+        }
+    }
+
+    img {
+        width: 70%;
+        @media screen and (max-width: 992px) {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        div {
+            width: 100% !important;
+        }
+    }
+}
