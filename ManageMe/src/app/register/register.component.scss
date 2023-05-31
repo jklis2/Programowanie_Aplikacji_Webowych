@@ -1,4 +1,4 @@
-.login-wrapper {
+.register-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,8 +6,8 @@
     background: url(../../assets/Sprinkle-background.svg);
   }
   
-  .login-form {
-    width: 400px; 
+  .register-form {
+    width: 500px; 
     height: 400px; 
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     margin-bottom: 20px;
 }
 
-.login-buttons {
-  color: rgb(0, 60, 255);
-  text-decoration: underline;
-}
+.register-buttons {
+    color: rgb(0, 60, 255);
+    text-decoration: underline;
+  }
