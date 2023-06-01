@@ -16,7 +16,8 @@
     }
 
     img {
-        width: 70%;
+        width: 90%;
+        border-radius: 5px;
         @media screen and (max-width: 992px) {
             width: 90%;
         }
