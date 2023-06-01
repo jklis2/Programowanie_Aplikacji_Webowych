@@ -1,13 +1,19 @@
 .dashboard-content-wrapper {
     background-color: rgb(245, 245, 245);
-    height: 86vh;
+    min-height: 87vh;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 
 .project-title {
     display: flex;
     justify-content: center;
     padding: 10px 0 0 0;
+}
+
+.project-description {
+    padding: 0 20px 0 20px;
+    text-align: justify;
 }
 
 .project-details {
@@ -19,9 +25,105 @@
     text-align: center;
 }
 
-.card{
+.card {
     width: 48%;
-    height: 75vh;
+    height: 70vh;
     padding: 1rem;
-    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.functionalities-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.functionalities-header h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.functionalities-header button {
+    margin-left: 10px;
+    width: 5rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.functionalities-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.functionality-info {
+    flex-grow: 1;
+}
+
+.functionalities-list {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.functionality-actions {
+    display: flex;
+    align-items: center;
+
+    .btn-outline-warning:hover{
+        color: white;
+    }
+}
+
+.functionality-actions button {
+    margin-left: 10px;
+    width: 5rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.functionalities-task-list {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.tasks-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.tasks-header h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.tasks-header button {
+    margin-left: 10px;
+    width: 5rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-state-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.task-state {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
 }
