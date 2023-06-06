@@ -17,6 +17,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddDialogComponent } from './dashboard/dashboard-content/add-dialog/add-dialog.component';
+import { EditDialogComponent } from './dashboard/dashboard-content/edit-dialog/edit-dialog.component';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import {MatTreeModule} from '@angular/material/tree';
     DashboardFooterComponent,
     DashboardNavbarComponent,
     DashboardSidebarComponent,
-    DashboardContentComponent
+    DashboardContentComponent,
+    AddDialogComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import {MatTreeModule} from '@angular/material/tree';
     BrowserAnimationsModule,
     MatMenuModule,
     MatTreeModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

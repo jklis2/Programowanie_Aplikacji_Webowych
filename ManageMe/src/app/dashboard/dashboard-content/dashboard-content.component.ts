@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { projectDetails } from './project-details';
+import { MatDialog } from '@angular/material/dialog';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
+
 
 @Component({
   selector: 'app-dashboard-content',
@@ -8,6 +11,12 @@ import { projectDetails } from './project-details';
 })
 export class DashboardContentComponent {
   projectList = projectDetails;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(AddDialogComponent);
+  }
 
   deleteFunctionality(id: any) {
     // Find the index of the functionality with the given ID
