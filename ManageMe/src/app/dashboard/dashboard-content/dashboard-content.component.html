@@ -19,22 +19,17 @@
                         <p class="functionalities-list">{{ functionality.functionallityName }}</p>
                     </div>
                     <div class="functionality-actions">
+                        <button type="button" class="btn btn-outline-success">Add Task</button>
                         <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteFunctionality(functionality.functionallityID)">Delete</button>
+                        <button type="button" class="btn btn-outline-danger"(click)="deleteFunctionality(functionality.functionallityID)">Delete</button>
                     </div>
                 </div>
             </div>
             <div class="tasks card">
-
-
-
                 <div class="tasks-header w-100">
                     <h2 class="titles">Tasks</h2>
-                    <div>
-                        <button type="button" class="btn btn-outline-success">Add</button>
-                    </div>
                 </div>
-                
+
                 <div *ngFor="let functionality of project.functionallities">
                     <p class="functionalities-task-list">
                         {{ functionality.functionallityName }} click:</p>
@@ -50,6 +45,8 @@
                                     <option value="Done">Done</option>
                                 </select>
                             </div>
+                            <button type="button" class="btn btn-outline-warning">Edit</button>
+                            <button type="button" class="btn btn-outline-danger">Delete</button>
                         </div>
                     </div>
                 </div>

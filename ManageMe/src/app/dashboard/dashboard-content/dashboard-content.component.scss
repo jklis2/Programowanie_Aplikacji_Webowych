@@ -82,7 +82,7 @@
 
 .functionality-actions button {
     margin-left: 10px;
-    width: 5rem;
+    width: 6rem;
     height: 1.8rem;
     display: flex;
     align-items: center;
@@ -90,40 +90,37 @@
 }
 
 .functionalities-task-list {
+    display: flex;
+    align-items: center;
     font-size: 14px;
     font-weight: 500;
     text-decoration: underline;
-}
-
-.tasks-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.tasks-header h2 {
-    padding: 0;
-    margin: 0;
-}
-
-.tasks-header button {
-    margin-left: 10px;
-    width: 5rem;
-    height: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 2rem 0 1rem 0;
 }
 
 .task-state-list {
     display: flex;
-    flex-direction: row;
+    align-items: center;
 }
 
 .task-state {
-    margin-left: 10px;
+    margin-left: 1rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+}
+
+.task-state select {
+    margin-left: 10px;
+}
+
+.task-state-list button {
+    margin-left: 2rem;
+    width: 6rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn-outline-warning:hover{
+        color: white;
+    }
 }

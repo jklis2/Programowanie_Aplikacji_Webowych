@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,7 +13,6 @@ import { DashboardFooterComponent } from './dashboard/dashboard-footer/dashboard
 import { DashboardNavbarComponent } from './dashboard/dashboard-navbar/dashboard-navbar.component';
 import { DashboardSidebarComponent } from './dashboard/dashboard-sidebar/dashboard-sidebar.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
@@ -39,7 +37,6 @@ import {MatTreeModule} from '@angular/material/tree';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgbModule,
     MatIconModule,
     BrowserAnimationsModule,
     MatMenuModule,
