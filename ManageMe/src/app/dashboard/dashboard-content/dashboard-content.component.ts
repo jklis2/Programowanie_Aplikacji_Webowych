@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { projectDetails } from './project-details';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 
 @Component({
@@ -14,8 +15,12 @@ export class DashboardContentComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  openDialog() {
+  openAddDialog() {
     this.dialog.open(AddDialogComponent);
+  }
+
+  openEditDialog() {
+    this.dialog.open(EditDialogComponent);
   }
 
   deleteFunctionality(id: any) {
