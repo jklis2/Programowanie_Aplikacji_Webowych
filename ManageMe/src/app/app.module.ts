@@ -18,8 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatDialogModule} from '@angular/material/dialog';
-import { AddDialogComponent } from './dashboard/dashboard-content/add-dialog/add-dialog.component';
-import { EditDialogComponent } from './dashboard/dashboard-content/edit-dialog/edit-dialog.component';
+import { EditDialogFunctionalitiesComponent } from './dashboard/dashboard-content/edit-dialog-functionalities/edit-dialog-functionalities.component';
+import { AddDialogTasksComponent } from './dashboard/dashboard-content/add-dialog-tasks/add-dialog-tasks.component';
+import { AddDialogFunctionalitiesComponent } from './dashboard/dashboard-content/add-dialog-functionalities/add-dialog-functionalities.component';
+import { EditDialogTasksComponent } from './dashboard/dashboard-content/edit-dialog-tasks/edit-dialog-tasks.component';
 
 
 @NgModule({
@@ -36,8 +38,10 @@ import { EditDialogComponent } from './dashboard/dashboard-content/edit-dialog/e
     DashboardNavbarComponent,
     DashboardSidebarComponent,
     DashboardContentComponent,
-    AddDialogComponent,
-    EditDialogComponent
+    EditDialogFunctionalitiesComponent,
+    AddDialogTasksComponent,
+    AddDialogFunctionalitiesComponent,
+    EditDialogTasksComponent
   ],
   imports: [
     BrowserModule,

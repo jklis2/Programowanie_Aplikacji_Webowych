@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { projectDetails } from './project-details';
 import { MatDialog } from '@angular/material/dialog';
-import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { AddDialogTasksComponent } from './add-dialog-tasks/add-dialog-tasks.component';
+import { EditDialogTasksComponent } from './edit-dialog-tasks/edit-dialog-tasks.component';
+import { AddDialogFunctionalitiesComponent } from './add-dialog-functionalities/add-dialog-functionalities.component';
+import { EditDialogFunctionalitiesComponent } from './edit-dialog-functionalities/edit-dialog-functionalities.component';
 
 
 @Component({
@@ -15,12 +17,20 @@ export class DashboardContentComponent {
 
   constructor(public dialog: MatDialog) {}
 
-  openAddDialog() {
-    this.dialog.open(AddDialogComponent);
+  openAddDialogTasks() {
+    this.dialog.open(AddDialogTasksComponent);
   }
 
-  openEditDialog() {
-    this.dialog.open(EditDialogComponent);
+  openEditDialogTasks() {
+    this.dialog.open(EditDialogTasksComponent);
+  }
+
+  openAddDialogFunctionalities() {
+    this.dialog.open(AddDialogFunctionalitiesComponent);
+  }
+
+  openEditDialogFunctionalities() {
+    this.dialog.open(EditDialogFunctionalitiesComponent);
   }
 
   deleteFunctionality(id: any) {

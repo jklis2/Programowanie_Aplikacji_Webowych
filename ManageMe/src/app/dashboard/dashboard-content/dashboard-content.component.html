@@ -11,7 +11,7 @@
                 <div class="functionalities-header w-100">
                     <h2 class="titles mx-4">Functionalities</h2>
                     <div>
-                        <button type="button" class="btn btn-outline-success" (click)="openAddDialog()">Add</button>
+                        <button type="button" class="btn btn-outline-success" (click)="openAddDialogFunctionalities()">Add</button>
                     </div>
                 </div>
                 <div class="functionalities-name" *ngFor="let functionality of project.functionallities">
@@ -19,8 +19,8 @@
                         <p class="functionalities-list">{{ functionality.functionallityName }}</p>
                     </div>
                     <div class="functionality-actions">
-                        <button type="button" class="btn btn-outline-success" (click)="openAddDialog()">Add Task</button>
-                        <button type="button" class="btn btn-outline-warning" (click)="openEditDialog()">Edit</button>
+                        <button type="button" class="btn btn-outline-success" (click)=" openAddDialogTasks()">Add Task</button>
+                        <button type="button" class="btn btn-outline-warning" (click)="openEditDialogFunctionalities()">Edit</button>
                         <button type="button" class="btn btn-outline-danger"(click)="deleteFunctionality(functionality.functionallityID)">Delete</button>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                                     <option value="Done">Done</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-outline-warning" (click)="openEditDialog()">Edit</button>
+                            <button type="button" class="btn btn-outline-warning" (click)="openEditDialogTasks()">Edit</button>
                             <button type="button" class="btn btn-outline-danger">Delete</button>
                         </div>
                     </div>
