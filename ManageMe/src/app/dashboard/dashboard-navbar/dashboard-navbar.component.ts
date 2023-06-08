@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard-navbar.component.html',
   styleUrls: ['./dashboard-navbar.component.scss']
 })
+
 export class DashboardNavbarComponent {
 
 }

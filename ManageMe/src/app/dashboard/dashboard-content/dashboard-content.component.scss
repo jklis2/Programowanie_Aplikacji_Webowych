@@ -5,6 +5,10 @@
     padding-bottom: 10px;
 }
 
+.btn-outline-warning:hover{
+    color: white;
+}
+
 .project-title {
     display: flex;
     justify-content: center;
@@ -74,10 +78,6 @@
 .functionality-actions {
     display: flex;
     align-items: center;
-
-    .btn-outline-warning:hover{
-        color: white;
-    }
 }
 
 .functionality-actions button {
@@ -101,6 +101,7 @@
 .task-state-list {
     display: flex;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .task-state {
@@ -120,7 +121,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .btn-outline-warning:hover{
-        color: white;
-    }
 }

@@ -5,20 +5,31 @@ import { AddDialogTasksComponent } from './add-dialog-tasks/add-dialog-tasks.com
 import { EditDialogTasksComponent } from './edit-dialog-tasks/edit-dialog-tasks.component';
 import { AddDialogFunctionalitiesComponent } from './add-dialog-functionalities/add-dialog-functionalities.component';
 import { EditDialogFunctionalitiesComponent } from './edit-dialog-functionalities/edit-dialog-functionalities.component';
-
+import { functionality } from 'src/app/models/functionality-model';
+import { SaveFunctionalities } from 'src/app/helpers/localStorageHelper';
 
 @Component({
   selector: 'app-dashboard-content',
   templateUrl: './dashboard-content.component.html',
   styleUrls: ['./dashboard-content.component.scss'],
 })
+
 export class DashboardContentComponent {
+
   projectList = projectDetails;
+  loadProjects: any = {};
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    const storedData = localStorage.getItem('functionalities');
+    if (storedData) {
+      this.loadProjects = JSON.parse(storedData);
+    }
+  }
 
-  openAddDialogTasks() {
-    this.dialog.open(AddDialogTasksComponent);
+  openAddDialogTasks(id: number) {
+    const dialogRef = this.dialog.open(AddDialogTasksComponent, {
+      data: { id: id },
+    });
   }
 
   openEditDialogTasks() {
@@ -34,13 +45,28 @@ export class DashboardContentComponent {
   }
 
   deleteFunctionality(id: any) {
-    // Find the index of the functionality with the given ID
-    const functionalityIndex = this.projectList[0].functionallities.findIndex(
-      (func) => func.functionallityID === id
+    const deleteFunctionallity = this.loadProjects.filter(
+      (func: functionality) => func.functionalityID !== id
     );
 
-    if (functionalityIndex !== -1) {
-      this.projectList[0].functionallities.splice(functionalityIndex, 1);
+    SaveFunctionalities(deleteFunctionallity);
+    location.reload();
+  }
+
+  deleteTask(selectedFunctionalityId: number, taskId: number) {
+    const selectedFunctionalityIndex = this.loadProjects.findIndex(
+      (project: any) => project.functionalityID === selectedFunctionalityId
+    );
+    if (selectedFunctionalityIndex !== -1) {
+      const selectedFunctionality =
+        this.loadProjects[selectedFunctionalityIndex];
+      const filteredTasks = selectedFunctionality.tasks.filter(
+        (task: any) => task.taskID !== taskId
+      );
+      selectedFunctionality.tasks = filteredTasks;
+      this.loadProjects[selectedFunctionalityIndex] = selectedFunctionality;
+      SaveFunctionalities(this.loadProjects);
     }
+    location.reload();
   }
 }

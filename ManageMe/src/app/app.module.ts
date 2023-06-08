@@ -22,6 +22,7 @@ import { EditDialogFunctionalitiesComponent } from './dashboard/dashboard-conten
 import { AddDialogTasksComponent } from './dashboard/dashboard-content/add-dialog-tasks/add-dialog-tasks.component';
 import { AddDialogFunctionalitiesComponent } from './dashboard/dashboard-content/add-dialog-functionalities/add-dialog-functionalities.component';
 import { EditDialogTasksComponent } from './dashboard/dashboard-content/edit-dialog-tasks/edit-dialog-tasks.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { EditDialogTasksComponent } from './dashboard/dashboard-content/edit-dia
     BrowserAnimationsModule,
     MatMenuModule,
     MatTreeModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,17 +11,21 @@
                 <div class="functionalities-header w-100">
                     <h2 class="titles mx-4">Functionalities</h2>
                     <div>
-                        <button type="button" class="btn btn-outline-success" (click)="openAddDialogFunctionalities()">Add</button>
+                        <button type="button" class="btn btn-outline-success"
+                            (click)="openAddDialogFunctionalities()">Add</button>
                     </div>
                 </div>
-                <div class="functionalities-name" *ngFor="let functionality of project.functionallities">
+                <div class="functionalities-name" *ngFor="let functionality of loadProjects">
                     <div class="functionality-info">
-                        <p class="functionalities-list">{{ functionality.functionallityName }}</p>
+                        <p class="functionalities-list">{{ functionality.name }}</p>
                     </div>
                     <div class="functionality-actions">
-                        <button type="button" class="btn btn-outline-success" (click)=" openAddDialogTasks()">Add Task</button>
-                        <button type="button" class="btn btn-outline-warning" (click)="openEditDialogFunctionalities()">Edit</button>
-                        <button type="button" class="btn btn-outline-danger"(click)="deleteFunctionality(functionality.functionallityID)">Delete</button>
+                        <button type="button" class="btn btn-outline-success"
+                            (click)=" openAddDialogTasks(functionality.functionalityID)">Add Task</button>
+                        <button type="button" class="btn btn-outline-warning"
+                            (click)="openEditDialogFunctionalities()">Edit</button>
+                        <button type="button" class="btn btn-outline-danger"
+                            (click)="deleteFunctionality(functionality.functionalityID)">Delete</button>
                     </div>
                 </div>
             </div>
@@ -30,13 +34,14 @@
                     <h2 class="titles">Tasks</h2>
                 </div>
 
-                <div *ngFor="let functionality of project.functionallities">
+                <div *ngFor="let functionality of loadProjects">
                     <p class="functionalities-task-list">
-                        {{ functionality.functionallityName }} click:</p>
+                        {{ functionality.name }}
+                    </p>
                     <div *ngFor="let task of functionality.tasks">
                         <div class="task-state-list">
                             <div>
-                                {{ task.taskName }}
+                                {{ task.name }}
                             </div>
                             <div>
                                 <select class="task-state">
@@ -45,8 +50,10 @@
                                     <option value="Done">Done</option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-outline-warning" (click)="openEditDialogTasks()">Edit</button>
-                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                            <button type="button" class="btn btn-outline-warning functionality-actions"
+                                (click)="openEditDialogTasks()">Edit</button>
+                            <button type="button" class="btn btn-outline-danger"
+                                (click)="deleteTask(functionality.functionalityID, task.taskID)">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -54,4 +61,3 @@
         </div>
     </div>
 </div>
-
