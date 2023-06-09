@@ -40,8 +40,12 @@ export class DashboardContentComponent {
     this.dialog.open(AddDialogFunctionalitiesComponent);
   }
 
-  openEditDialogFunctionalities() {
-    this.dialog.open(EditDialogFunctionalitiesComponent);
+  openEditDialogFunctionalities(functionality: any) {
+    console.log(functionality)
+    this.dialog.open(EditDialogFunctionalitiesComponent, {
+      data: functionality
+    });
+    
   }
 
   deleteFunctionality(id: any) {

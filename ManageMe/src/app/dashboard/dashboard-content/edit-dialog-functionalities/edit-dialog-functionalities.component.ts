@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SaveFunctionalities } from 'src/app/helpers/localStorageHelper';
 
 @Component({
   selector: 'app-edit-dialog-functionalities',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-dialog-functionalities.component.scss']
 })
 export class EditDialogFunctionalitiesComponent {
+  name = ''
+  loadProjects: any = [];
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    const storedData = localStorage.getItem('functionalities');
+    if (storedData) {
+      this.loadProjects = JSON.parse(storedData);
+    }
+  }
 
+  updateFunctionality() {
+    const index = this.loadProjects.findIndex((item: any) => item.name === this.data.name);
+
+    if (index !== -1) {
+      this.loadProjects[index].name = this.name;
+      SaveFunctionalities(this.loadProjects);
+    }
+    location.reload();
+  }
 }
