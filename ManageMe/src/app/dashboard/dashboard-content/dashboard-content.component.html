@@ -44,8 +44,8 @@
                                 {{ task.name }}
                             </div>
                             <div>
-                                <select class="task-state">
-                                    <option value="To Do">To Do</option>
+                                <select class="task-state" [(ngModel)]="task.state" (change)="saveToLocal($event.target, task)">            
+                                    <option value="To Do">To do</option>
                                     <option value="Doing">Doing</option>
                                     <option value="Done">Done</option>
                                 </select>

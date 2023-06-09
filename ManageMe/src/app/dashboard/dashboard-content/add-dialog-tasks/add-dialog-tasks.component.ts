@@ -43,6 +43,7 @@ export class AddDialogTasksComponent {
 
       const updatedData = JSON.stringify(this.loadProjects);
       localStorage.setItem('functionalities', updatedData);
+      console.log(newTask)
       location.reload();
     }
   }

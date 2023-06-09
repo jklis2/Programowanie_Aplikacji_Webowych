@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { projectDetails } from './project-details';
 import { MatDialog } from '@angular/material/dialog';
 import { AddDialogTasksComponent } from './add-dialog-tasks/add-dialog-tasks.component';
@@ -15,7 +15,14 @@ import { task } from 'src/app/models/task-model';
   styleUrls: ['./dashboard-content.component.scss'],
 })
 
-export class DashboardContentComponent {
+export class DashboardContentComponent  implements OnInit{
+
+  enums: string[] =[]
+
+  
+  ToDo: any = localStorage.getItem('ToDo')
+  Done: any = localStorage.getItem('Done')
+  Doing: any = localStorage.getItem('Doing')
 
   projectList = projectDetails;
   loadProjects: any = {};
@@ -25,6 +32,27 @@ export class DashboardContentComponent {
     if (storedData) {
       this.loadProjects = JSON.parse(storedData);
     }
+  }
+  
+  ngOnInit(): void {
+    this.enums.push(this.ToDo);
+    this.enums.push(this.Done);
+    this.enums.push(this.Doing);
+  
+    for (const functionality of this.loadProjects) {
+      for (const task of functionality.tasks) {
+        const taskState = localStorage.getItem(task.taskID.toString());
+        if (taskState) {
+          task.state = taskState;
+        }
+      }
+    }
+  }
+
+  saveToLocal(option:any, task: any)
+  {
+    task.state = option.value
+    SaveFunctionalities(this.loadProjects)
   }
 
   openAddDialogTasks(id: number) {
@@ -79,4 +107,9 @@ export class DashboardContentComponent {
     }
     location.reload();
   }
+
+  changeState() {
+  
+  }
 }
+
