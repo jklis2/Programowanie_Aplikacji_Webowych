@@ -7,6 +7,7 @@ import { AddDialogFunctionalitiesComponent } from './add-dialog-functionalities/
 import { EditDialogFunctionalitiesComponent } from './edit-dialog-functionalities/edit-dialog-functionalities.component';
 import { functionality } from 'src/app/models/functionality-model';
 import { SaveFunctionalities } from 'src/app/helpers/localStorageHelper';
+import { task } from 'src/app/models/task-model';
 
 @Component({
   selector: 'app-dashboard-content',
@@ -32,9 +33,14 @@ export class DashboardContentComponent {
     });
   }
 
-  openEditDialogTasks() {
-    this.dialog.open(EditDialogTasksComponent);
-  }
+  openEditDialogTasks(functionalityId: number, taskId: number) {
+    this.dialog.open(EditDialogTasksComponent, {
+      data: {
+        functionality: functionalityId,
+        task: taskId
+      }
+    });
+  }  
 
   openAddDialogFunctionalities() {
     this.dialog.open(AddDialogFunctionalitiesComponent);

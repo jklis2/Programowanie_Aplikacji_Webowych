@@ -51,7 +51,7 @@
                                 </select>
                             </div>
                             <button type="button" class="btn btn-outline-warning functionality-actions"
-                                (click)="openEditDialogTasks()">Edit</button>
+                                (click)="openEditDialogTasks(functionality.functionalityID, task.taskID)">Edit</button>
                             <button type="button" class="btn btn-outline-danger"
                                 (click)="deleteTask(functionality.functionalityID, task.taskID)">Delete</button>
                         </div>
