@@ -11,7 +11,7 @@ import { functionality } from 'src/app/models/functionality-model';
 export class AddDialogFunctionalitiesComponent {
 
   input!: string;
-  data: functionality = { functionalityID: Date.now(), name: 'a', tasks: [] };
+  data: functionality = { functionalityID: Date.now(), name: 'a', state: "ToDo", tasks: [] };
   functionallityName!: any;
 
   onAdd() {
@@ -19,6 +19,7 @@ export class AddDialogFunctionalitiesComponent {
       return;
     }
     this.data.name = this.functionallityName;
+    console.log(this.data)
     AddFunctionality(this.data);
     location.reload();
   }

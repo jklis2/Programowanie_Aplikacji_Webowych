@@ -45,6 +45,11 @@ export class DashboardContentComponent  implements OnInit{
         if (taskState) {
           task.state = taskState;
         }
+        if (functionality.tasks.every((task: any) => task.state === 'Done')) {
+          functionality.state = "Done"
+        } else {
+          functionality.state = "Doing"
+        }
       }
     }
   }
@@ -53,6 +58,7 @@ export class DashboardContentComponent  implements OnInit{
   {
     task.state = option.value
     SaveFunctionalities(this.loadProjects)
+    location.reload();
   }
 
   openAddDialogTasks(id: number) {

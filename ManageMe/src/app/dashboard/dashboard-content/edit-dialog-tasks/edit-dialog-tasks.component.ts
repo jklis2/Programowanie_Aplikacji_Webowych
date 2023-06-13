@@ -26,7 +26,7 @@ export class EditDialogTasksComponent {
 
   updateTask() {
     const functionalities = this.loadProjects.filter((fun: any) => fun.functionalityID === this.data.functionality);
-    const functionality = functionalities[0]; // Assuming there is only one functionality matching the filter
+    const functionality = functionalities[0];
     const tasks = functionality.tasks;
     
     const taskIndex = tasks.findIndex((t: any) => t.taskID === this.data.task);
@@ -37,10 +37,4 @@ export class EditDialogTasksComponent {
     SaveFunctionalities(this.loadProjects)
     location.reload();
   }
-  
-  
-  // saveChanges() {
-  //   // Zapisanie wprowadzonych zmian i zamknięcie okna dialogowego
-  //   this.dialogRef.close(this.editedTask);
-  // }
 }

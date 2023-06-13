@@ -38,6 +38,10 @@ export class AddDialogTasksComponent {
       };
 
       functionalityTask.tasks.push(newTask);
+      if (functionalityTask.tasks.length > 0) {
+        functionalityTask.state = "Doing"
+      }
+      console.log(functionalityTask)
       SaveFunctionalities(this.loadProjects);
       this.nameOfTask = '';
 
