@@ -26,4 +26,10 @@ export class EditDialogFunctionalitiesComponent {
     }
     location.reload();
   }
+
+  ngOnInit(): void {
+    const nameOfEditFunctionality = this.loadProjects.filter((item: any) => item.name === this.data.name);
+    this.name = nameOfEditFunctionality[0].name
+    console.log(this.name)
+  }
 }

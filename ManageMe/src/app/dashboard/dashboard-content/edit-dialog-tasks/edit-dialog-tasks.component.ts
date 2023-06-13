@@ -37,4 +37,12 @@ export class EditDialogTasksComponent {
     SaveFunctionalities(this.loadProjects)
     location.reload();
   }
+
+  ngOnInit(): void {
+    const functionalitiesList = this.loadProjects.filter((fun: any) => fun.functionalityID === this.data.functionality);
+    const editTaskName = functionalitiesList[0].tasks
+    const selectedTask = editTaskName.filter((t: any) => t.taskID === this.data.task);
+    this.newTaskName = selectedTask[0].name
+    console.log(selectedTask)
+  }
 }
